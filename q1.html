@@ -1,6 +1,5 @@
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Projeto WEB - AV1</title>
@@ -32,12 +31,14 @@
     media = (nota1 + nota2)/2;
     if (media>=7)
     {
-    resultado= "Aprovado"
+    resultado= String("Aprovado")
     }
     else if (media>3){
-    document.getElementById("resultado").innerHTML = ("Aluno em Recuperação! "+nome+ "/" +turma+ "/" +disciplina + "/" +media)
+    resultado= String("Aluno em Recuperação!")
     }
-    else document.getElementById("resultado").innerHTML = ("Aluno Reprovado! "+nome+ "/" +turma+ "/" +disciplina + "/" +media)
+    else resultado=String("Aluno Reprovado!")
+    
+    document.getElementById("demo").innerHTML =<br> nome+", você está "+resultado+" na disciplina "+disciplina+" com média "+media;
     }
     </script>
 
@@ -92,7 +93,8 @@
                 <button onclick="calcular()" class="btn btn-lg btn-primary btn-block" type="button">Calcular</button>
             </div>
           </form>
-          <p id="resultado"></p>
+          <br><br>
+          <p id="demo"></p>
           
     </main>
     <footer class="footer">
