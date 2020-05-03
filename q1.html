@@ -1,0 +1,111 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Projeto WEB - AV1</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+   
+    <!-- CSS Topo e Rodapé -->
+    <link href="css/starter-template.css" rel="stylesheet">
+
+    <!-- CSS Interno -->
+    <style>
+      td, th {
+        text-align: center;
+      }
+      input{
+          margin-top: 10px;
+          margin-bottom: 10px;
+      }
+    </style>
+
+    <script type="text/javascript">
+    function calcular(){
+    nome= form-info.nome.value;
+    disciplina= form-info.disciplina.value;
+    nota1= form-info.nota1.value;
+    nota2= form-info.nota2.value;
+    resultado= String;
+    media = (nota1 + nota2)/2;
+    if (media>=7)
+    {
+    resultado= "Aprovado"
+    }
+    else if (media>3){
+    document.getElementById("resultado").innerHTML = ("Aluno em Recuperação! "+nome+ "/" +turma+ "/" +disciplina + "/" +media)
+    }
+    else document.getElementById("resultado").innerHTML = ("Aluno Reprovado! "+nome+ "/" +turma+ "/" +disciplina + "/" +media)
+    }
+    </script>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="index.html">Projeto WEB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+  
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Questões</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="q1.html">Questão - 01</a>
+                    <a class="dropdown-item" href="q2.html">Questão - 02</a>
+                    <a class="dropdown-item" href="q3.html">Questão - 03</a>
+                    <a class="dropdown-item" href="q4.html">Questão - 04</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </nav>
+      </header> 
+    <!-- Solução Questão - 01 -->
+
+    <main role="main" class="container">
+
+        <div class="starter-template">
+          <h1>Questão - 01</h1>
+          <p class="lead">Software para calcular média do aluno.</p>
+        </div>
+
+        <form class="form-info" id="form-info">
+            <div>
+                <h1 class="h3 mb-3 font-weight-normal">Informações</h1>
+                <label for="nome" class="sr-only">Nome</label>
+                <input type="text" id="nome" class="form-control" placeholder="Nome completo" required autofocus>
+                <label for="disciplina" class="sr-only">Disciplina</label>
+                <input type="text" id="disciplina" class="form-control" placeholder="Disciplina" required>
+                <label for="nota1" class="sr-only">Nota1</label>
+                <input type="text" id="nota1" class="form-control" placeholder="Nota1" required>
+                <label for="nota2" class="sr-only">Nota2</label>
+                <input type="text" id="nota2" class="form-control" placeholder="Nota2" required>
+                
+                <button onclick="calcular()" class="btn btn-lg btn-primary btn-block" type="button">Calcular</button>
+            </div>
+          </form>
+          <p id="resultado"></p>
+          
+    </main>
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">Site desenvolvido por Darlan - Code in <a target="_blank" href="https://github.com/DarlanSantos444/Trabalho.git">GitHub</a> </span>
+        </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
