@@ -10,35 +10,37 @@
     <!-- CSS Topo e Rodapé -->
     <link href="css/starter-template.css" rel="stylesheet">
 
-    <!-- CSS Interno -->
+    <script>
+      function calcularMediaA(){
+          nome        = form_calcularmedia.nome.value;
+          disciplina  = form_calcularmedia.disciplina.value;
+          notaUm      = form_calcularmedia.nota1.value;
+          notaDois    = form_calcularmedia.nota1.value;
 
+          media = (parseFloat(notaUm) + parseFloat(notaDois))/2;
+          
+          if (media < 3){
+              resultado = 'Reprovado';
+          }
 
-    <script type="text/javascript">
-      function calcular(){
-      nome= form-info.nome.value;
-      disciplina= form-info.disciplina.value;
-      nota1= form-info.nota1.value;
-      nota2= form-info.nota2.value;
-      resultado;
-      media = (nota1 + nota2)/2;
-      if (media>=7)
-      {
-        resultado="Aprovado";
+          else if (media > 7){
+              resultado = 'Aprovado';
+          }
+
+          else{
+              resultado = 'Recuperação';
+          }
+
+          document.getElementById("nomeAluno").innerHTML = '<p><b>Nome:</b></p>' + nome;
+          document.getElementById("nomeDisciplina").innerHTML = '<p><b>Disciplina:</b></p>' + disciplina;
+          document.getElementById("suaMedia").innerHTML = '<p><b>Média:</b></p>' + media;
+          document.getElementById("situacao").innerHTML = '<p><b>Situação:</b></p>' + resultado;
+
       }
-      else if (media>3){
-        resultado="Aluno em Recuperação!";
-      }
-      else {
-        resultado="Aluno Reprovado!";
-      }
-      document.getElementById("demo").innerHTML = nome+", você está "+resultado+" na disciplina "+disciplina+" com média "+media;
-      }
-    </script>
+  </script>
   </head>
   <style>
-    td, th {
-      text-align: center;
-    }
+
     input{
         margin-top: 10px;
         margin-bottom: 10px;
@@ -80,36 +82,29 @@
           <p class="lead">Software para calcular média do aluno.</p>
         </div>
 
-        <form class="form-info" id="form-info">
-            <div>
-                <h1 class="h3 mb-3 font-weight-normal">Informações</h1>
-                <label for="nome" class="sr-only">Nome</label>
-                <input type="text" id="nome" class="form-control" placeholder="Nome completo" required autofocus>
-                <label for="disciplina" class="sr-only">Disciplina</label>
-                <input type="text" id="disciplina" class="form-control" placeholder="Disciplina" required>
-                <label for="nota1" class="sr-only">Nota1</label>
-                <input type="text" id="nota1" class="form-control" placeholder="Nota1" required>
-                <label for="nota2" class="sr-only">Nota2</label>
-                <input type="text" id="nota2" class="form-control" placeholder="Nota2" required>
-                
-                <button onclick="calcular()" class="btn btn-lg btn-primary btn-block" type="button">Calcular</button>
-            </div>
-          </form>
-          <br><br>
-          <p id="demo"></p>
-          
-    </main>
+        <form id="form_calcularmedia" name="form_calcularmedia" method="POST" action="">
+          <label>Seu nome</label>
+              <input type="text" name="nome" id="nome" required><br><br>
+          <label>Disciplina</label>
+              <input type="text" name="disciplina" id="disciplina" required><br><br>
+          <label>Nota 1</label>
+              <input type="number" name="nota1" id="nota1" required><br><br>
+          <label>Nota 2</label>
+              <input type="number" name="nota2" id="nota2" required><br><br>
+  
+          <button type="button" onclick="calcularMediaA()">Calcular</button>
+      </form>
+  
+      <div>
+          <p id="nomeAluno">Nome:</p>
+          <p id="nomeDisciplina">Disciplina:</p>
+          <p id="suaMedia">Média:</p>
+          <p id="situacao">Situação:</p>
+      </div>
     <footer class="footer">
         <div class="container">
           <span class="text-muted">Site desenvolvido por Darlan - Code in <a target="_blank" href="https://github.com/DarlanSantos444/Trabalho.git">GitHub</a> </span>
         </div>
     </footer>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
