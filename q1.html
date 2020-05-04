@@ -23,15 +23,16 @@
       media = (nota1 + nota2)/2;
       if (media>=7)
       {
-      resultado= String("Aprovado")
+        resultado="Aprovado"
       }
       else if (media>3){
-      resultado= String("Aluno em Recuperação!")
+        resultado="Aluno em Recuperação!"
       }
-      else resultado=String("Aluno Reprovado!")
-    
-    document.getElementById("demo").innerHTML = nome+", você está "+resultado+" na disciplina "+disciplina+" com média "+media;
-    }
+      else {
+        resultado="Aluno Reprovado!"
+      }
+      document.getElementById("demo").innerHTML = nome+", você está "+resultado+" na disciplina "+disciplina+" com média "+media;
+      }
     </script>
   </head>
   <style>
