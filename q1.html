@@ -40,10 +40,13 @@
   </script>
   </head>
   <style>
-
+    .col-6{
+      border-style: dotted;
+      margin-bottom: 2px;
+    }
     input{
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 5px;
+        margin-bottom: 1px;
     }
   </style>
 <body>
@@ -82,6 +85,8 @@
           <p class="lead">Software para calcular média do aluno.</p>
         </div>
 
+        <div class="row">
+        <div class="col-6">
         <form id="form_calcularmedia" name="form_calcularmedia" method="POST" action="">
           <label>Seu nome</label><br>
               <input type="text" name="nome" id="nome" required><br><br>
@@ -92,14 +97,16 @@
           <label>Nota 2</label><br>
               <input type="number" name="nota2" id="nota2" required><br><br>
   
-          <button type="button" onclick="calcularMediaA()">Calcular</button>
+              <button onclick="calcularMediaA()" class="btn btn-outline-primary" type="button">Calcular</button>
       </form>
-  
-      <div>
+      </div>
+      
+      <div class="col-6">
           <p id="nomeAluno">Nome:</p>
           <p id="nomeDisciplina">Disciplina:</p>
           <p id="suaMedia">Média:</p>
           <p id="situacao">Situação:</p>
+      </div>
       </div>
     <footer class="footer">
         <div class="container">
