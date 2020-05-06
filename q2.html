@@ -55,9 +55,33 @@
 
       <div class="starter-template">
         <h1>Questão - 02</h1>
-        <p class="lead"><br></p>
+        <p class="lead">Faça um programa que possibilite gerar um CARNÊ DE PAGAMENTO para um cliente de uma loja de
+          eletrodomésticos. O programa deve receber o nome do cliente, o (1)produto que ele deseja comprar, valor
+          do produto, quantidade, qtd de parcelas (máximo em 6x). O programa deve gerar a quantidade de carnes
+          de acordo com a quantidade de parcelas. Cada carnê deve conter as seguintes informações:
+          Requisitos de Negócios:
+          Se o pagamento for parcelado em 3 vezes deve ser dado um acréscimo de 5% no total a ser pago. Se o
+          parcelamento for em 6 vezes, o acréscimo será de 12%.<br></p>
       </div>
       
+      <form id="form_parcela" name="form_parcela" method="POST" action="">
+        <label>Seu nome</label><br>
+            <input type="text" name="nome" id="nome" required><br><br>
+        <label>Produto</label><br>
+            <input type="text" name="produto" id="produto" required><br><br>
+        <label>Valor</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend2">R$</span>
+              </div>
+              <input type="number" class="form-control" id="valor" name="valor" required>
+            </div>
+        <label>Número de parcelas</label><br>
+        <input type="number" class="form-control" id="parcelas" name="parcelas" max="6" required><br><br>
+
+            <button onclick="parcelamento()" class="btn btn-outline-primary" type="button">Calcular</button>
+    </form>
+
       </main>
     
     <footer class="footer">
