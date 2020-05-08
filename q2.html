@@ -18,10 +18,41 @@
       }
     </style>
  
-    <!-- Solução Questão - 03 -->
+    <!-- Solução Questão - 02 -->
     
 
   </head>
+
+  <script>
+    function parcelamento(){
+        produto = form_parcela.produto.value;
+        valor = form_parcela.valor.value;
+        nome = form_parcela.nome.value;
+        parcelas = form_parcela.parcelas.value;
+        aumento = valor;
+        if (parcelas == 03) {
+          aumento  = (parseFloat(valor) + valor * 0.05);
+        }
+        else if (parcelas == 06){
+          aumento = (parseFloat(valor) + valor * 0.12);
+
+        }
+        else{
+          valor= valor;
+        }
+      
+          document.getElementById("resultado").innerHTML=
+        "------------CARNÊ------------------"+
+        "<br>Cliente: "+nome+
+        "<br>Produto: "+produto+
+        "<br>Preço: "+valor+
+        "<br>Parcelas: "+parcelas+
+        "<br>Valor parcela: "+aumento+
+        "<br>-----------------------------------" ;  
+       
+      
+    }
+</script>
 
   <body>
     <header>
@@ -63,25 +94,31 @@
           Se o pagamento for parcelado em 3 vezes deve ser dado um acréscimo de 5% no total a ser pago. Se o
           parcelamento for em 6 vezes, o acréscimo será de 12%.<br></p>
       </div>
-      
-      <form id="form_parcela" name="form_parcela" method="POST" action="">
-        <label>Seu nome</label><br>
-            <input type="text" name="nome" id="nome" required><br><br>
-        <label>Produto</label><br>
-            <input type="text" name="produto" id="produto" required><br><br>
-        <label>Valor</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupPrepend2">R$</span>
+      <div class="row">
+        <div class="col-6">
+        <form id="form_parcela" name="form_parcela" method="POST" action="">
+          <label>Seu nome</label><br>
+              <input type="text" name="nome" id="nome" required><br><br>
+          <label>Produto</label><br>
+              <input type="text" name="produto" id="produto" required><br><br>
+          <label>Valor</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend2">R$</span>
+                </div>
+                <input type="number" class="form-control" id="valor" name="valor" required>
               </div>
-              <input type="number" class="form-control" id="valor" name="valor" required>
-            </div>
-        <label>Número de parcelas</label><br>
-        <input type="number" class="form-control" id="parcelas" name="parcelas" max="6" required><br><br>
+          <label>Número de parcelas</label><br>
+          <input type="number" class="form-control" id="parcelas" name="parcelas" max="6" required><br><br>
 
-            <button onclick="parcelamento()" class="btn btn-outline-primary" type="button">Calcular</button>
-    </form>
+              <button onclick="parcelamento()" class="btn btn-outline-primary" type="button">Calcular</button>
+        </form>
+        </div>
 
+      <div class="col-6">
+        <p id="resultado"></p>
+      </div>
+    </div>
       </main>
     
     <footer class="footer">
